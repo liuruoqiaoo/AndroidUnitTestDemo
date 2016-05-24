@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!--<Match>这个标签的意思是过滤掉以下的内容-->
+    <Match>
+        <!-- ignore all issues in resource generation -->
+        <Class name="~.*\.R\$.*"/>
+    </Match>
+
+    <Match>
+        <Class name="~.*\.Manifest\$.*"/>
+    </Match>
+
+    <Match>
+        <Class name="~.*\.*Test*" />
+        <!-- test classes are suffixed by 'Test' -->
+        <Not>
+            <Bug code="IJU" /> <!-- 'IJU' is the code for bugs related to JUnit test code 跟JUnit有关的问题 -->
+        </Not>
+    </Match>
+
+    <Match>
+        <Class name="~.*\.*ByEspresso" />
+        <!-- test classes are suffixed by 'Test' -->
+        <Not>
+            <Bug code="IJU" /> <!-- 'IJU' is the code for bugs related to JUnit test code 跟JUnit有关的问题 -->
+        </Not>
+    </Match>
+
+    <!--还可以添加更多个性化的订制-->
+    <!--<Match>-->
+        <!--<Bug category="PERFORMANCE" /> 以一大类的bug来过滤的，findbug在检测的时候分成几大类bug，如果过滤掉的话，那么那一类bug就不会被扫描出来-->
+        <!--1、性能问题-->
+        <!--<Bug category="PERFORMANCE" />-->
+        <!--2、一般正确性问题-->
+        <!--<Bug category="CORRECTNESS" />-->
+        <!--3、多线程正确性问题-->
+        <!--<Bug category="MT_CORRECTNESS" />-->
+        <!--4、恶意代码，有可能成为攻击点-->
+        <!--<Bug category="MALICIOUS_CODE" />-->
+
+        <!--<Or>-->
+            <!--<BugCode name="Nm"/> 这个是category类下的细分，如果这样写的话，就是某一大类中的一小类的那种bug不会被扫出来，具体有哪些小类，可以在报告中查到-->
+            <!--Field names should start with a lower case letter-->
+            <!--<BugCode name="Nm"/>-->
+            <!--Method ignores exceptional return value or Return value of method without side effect is ignored-->
+            <!--<BugCode name="RV"/>-->
+            <!--国际化-->
+            <!--<BugCode name="Dm"/>-->
+        <!--</Or>-->
+    <!--</Match>-->
+
+</FindBugsFilter>

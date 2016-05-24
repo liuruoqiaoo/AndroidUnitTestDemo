@@ -106,7 +106,8 @@ public class CalculatorTest {
      * 限时测试:给测试函数设定一个执行时间，超过了这个时间，就会被系统强行终止，并且汇报该函数结束的原因是因为超时
      *
      */
-    @Test(timeout = 1000)
+    //@Test(timeout = 1000)
+    @Ignore
     public void test007_timeout(){
         //为了方便，直接在测试方法中进行一个耗时操作进行测试
         try {

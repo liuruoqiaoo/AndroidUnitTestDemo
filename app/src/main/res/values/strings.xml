@@ -9,6 +9,6 @@
     <string name="tran">获取今日美元汇率并计算结果</string>
     <string name="rmb">单位：人民币</string>
     <string name="tran_result">美元兑换结果</string>
-    <string name="result_text">%1$lf</string>
-    <string name="tranresult_text">%1$lf美元</string>
+    <string name="result_text">%.1f</string>
+    <string name="tranresult_text">%.1f美元</string>
 </resources>
